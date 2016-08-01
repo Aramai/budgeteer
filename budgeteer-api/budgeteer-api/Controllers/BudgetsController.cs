@@ -12,9 +12,13 @@ namespace Budgeteer.Api.Controllers
     {
         Budget[] budgets = new Budget[]
         {
-            new Budget { ID = 1, Name = "Household" },
-            new Budget { ID = 2, Name = "Side Business" }
+            new Budget { BudgetID = 1, Name = "Household" },
+            new Budget { BudgetID = 2, Name = "Side Business" }
         };
+
+        public BudgetsController()
+        {
+        }
 
         public BudgetsController(List<Budget> newBudgets)
         {
@@ -28,7 +32,7 @@ namespace Budgeteer.Api.Controllers
 
         public IHttpActionResult GetBudget(int id)
         {
-            var budget = budgets.FirstOrDefault((p) => p.ID == id);
+            var budget = budgets.FirstOrDefault((p) => p.BudgetID == id);
             if (budget == null)
             {
                 return NotFound();

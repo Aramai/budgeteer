@@ -45,8 +45,8 @@ namespace Budgeteer.Api.Tests
         {            
             Budget[] budgets = new Budget[]
             {
-                new Budget { ID = 1, Name = "Household" },
-                new Budget { ID = 2, Name = "Side Business" }
+                new Budget { BudgetID = 1, Name = "Household" },
+                new Budget { BudgetID = 2, Name = "Side Business" }
             };
 
             return new List<Budget>(budgets);

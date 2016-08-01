@@ -15,10 +15,16 @@ namespace Budgeteer.Api
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "AccountsByBudgetApi",
+                routeTemplate: "api/{controller}/{budgetID}",
+                defaults: new { controller = "accounts", budgetID = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
-            );
+            );            
         }
     }
 }

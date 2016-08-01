@@ -6,7 +6,7 @@
     <ProjectGuid>{D566D21B-08E7-4C12-B2E8-F72B278979BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>budgeteer_api.Tests</RootNamespace>
+    <RootNamespace>Budgeteer.Api.Tests</RootNamespace>
     <AssemblyName>budgeteer-api.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountTest.cs" />
     <Compile Include="BudgetTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
