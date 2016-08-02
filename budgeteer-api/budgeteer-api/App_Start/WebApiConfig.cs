@@ -16,13 +16,19 @@ namespace Budgeteer.Api
 
             config.Routes.MapHttpRoute(
                 name: "AccountsByBudgetApi",
-                routeTemplate: "api/{controller}/{budgetID}",
-                defaults: new { controller = "accounts", budgetID = RouteParameter.Optional }
+                routeTemplate: "api/v1/budgets/{budgetID}/accounts",
+                defaults: new { controller = "accounts" }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "SingleAccountByBudgetApi",
+                routeTemplate: "api/v1/budgets/{budgetID}/accounts/{accountID}",
+                defaults: new { controller = "accounts" }
             );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/v1/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );            
         }

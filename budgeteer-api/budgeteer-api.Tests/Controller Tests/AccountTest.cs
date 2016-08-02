@@ -14,7 +14,7 @@ namespace Budgeteer.Api.Tests
         [TestMethod]
         public void GetAccounts_ReturnAccountList()
         {
-            int budgetID = 1;
+            var budgetID = 1;
 
             var testAccounts = GetTestAccounts(budgetID);
             var controller = new AccountsController(testAccounts);
@@ -24,6 +24,20 @@ namespace Budgeteer.Api.Tests
             Assert.AreEqual(testAccounts.Count, result.Count);
         }
 
+        [TestMethod]
+        public void GetAccountForBudget_ReturnAccount()
+        {
+            var budgetID = 1;
+            var accountID = 1;
+            
+            var testAccounts = GetTestAccounts(budgetID);
+            var controller = new AccountsController(testAccounts);
+
+            var result = controller.GetAccountForBudget(budgetID, accountID) as OkNegotiatedContentResult<Account>;
+            var acc = testAccounts.Where(x => x.AccountID == accountID).FirstOrDefault();
+
+            Assert.AreEqual(acc.Name, result.Content.Name);
+        }
         private List<Account> GetTestAccounts(int budgetID)
         {
             Account[] accounts = new Account[]

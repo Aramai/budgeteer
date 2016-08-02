@@ -33,5 +33,16 @@ namespace Budgeteer.Api.Controllers
         {
             return accounts.Where(x => x.BudgetID == budgetID);
         }
+
+        [HttpGet]
+        public IHttpActionResult GetAccountForBudget(int budgetID, int accountID)
+        {
+            var account = accounts.FirstOrDefault(x => x.BudgetID == budgetID && x.AccountID == accountID);
+            if (account == null)
+            {
+                return NotFound();
+            }
+            return Ok(account);
+        }
     }
 }

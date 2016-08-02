@@ -25,18 +25,22 @@ namespace Budgeteer.Api.Controllers
             budgets = newBudgets.ToArray();
         }
 
+        [HttpGet]
         public IEnumerable<Budget> GetAllBudgets()
         {
             return budgets;
         }
 
+        [HttpGet]
         public IHttpActionResult GetBudget(int id)
         {
             var budget = budgets.FirstOrDefault((p) => p.BudgetID == id);
+
             if (budget == null)
             {
                 return NotFound();
             }
+
             return Ok(budget);
         }
     }
