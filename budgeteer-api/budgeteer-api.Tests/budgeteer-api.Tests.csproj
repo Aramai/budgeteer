@@ -50,6 +50,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller Tests\CategoryTest.cs" />
     <Compile Include="Helpers\ReflectionHelpers.cs" />
     <Compile Include="Route Tests\RouteTest.cs" />
     <Compile Include="Helpers\RouteTester.cs" />

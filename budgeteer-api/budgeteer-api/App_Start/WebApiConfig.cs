@@ -27,6 +27,12 @@ namespace Budgeteer.Api
             );
 
             config.Routes.MapHttpRoute(
+                name: "MasterCategoriesByBudgetApi",
+                routeTemplate: "api/v1/budgets/{budgetID}/categories",
+                defaults: new { controller = "categories" }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/v1/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

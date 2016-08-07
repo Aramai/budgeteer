@@ -12,7 +12,7 @@ namespace Budgeteer.Api.Tests
     public class BudgetTest
     {
         [TestMethod]
-        public void GetAllBudgets_ShouldReturnAllProducts()
+        public void GetAllBudgets_ShouldReturnAll()
         {
             var testBudgets = GetTestBudgets();
             var controller = new BudgetsController(testBudgets);
